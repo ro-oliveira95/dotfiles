@@ -1,0 +1,54 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = '''
+┌──$time$cmd_duration$git_branch$git_state$git_status$conda
+└──$directory──$character'''
+
+add_newline = false
+
+[character]
+success_symbol = '[](green)'
+error_symbol = '[](red)'
+
+[cmd_duration]
+format = '\[[⏱ $duration]($style)\] '
+style = "yellow"
+min_time = 2000
+
+[conda]
+format = '\[[$symbol$environment]($style)\] '
+style = "#ffb86c"
+
+[directory]
+format = '\[[$path]($style)[$read_only]($read_only_style)\]'
+style = "#ff79c6"
+
+[docker_context]
+format = '\[[$symbol$context]($style)\] '
+
+[git_branch]
+format = '\[[$symbol$branch]($style) '
+symbol = "\uf418 "
+style = "#bd93f9"
+
+[git_status]
+format = '([$all_status$ahead_behind]($style))\] '
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+style = "#bd93f9"
+
+[python]
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\] '
+
+[rust]
+format = '\[[$symbol($version)]($style)\] '
+
+[time]
+format = '\[[$time]($style)\] '
+disabled = false
+style = "#8be9fd"
+
+[username]
+format = '\[[$user]($style)\] '
