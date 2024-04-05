@@ -2,7 +2,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = '''
-┌──$time$cmd_duration$git_branch$git_state$git_status$conda
+┌──$time$cmd_duration$git_branch$git_state$git_status$conda$python
 └──$directory──$character'''
 
 add_newline = false
